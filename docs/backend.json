@@ -1,0 +1,518 @@
+{
+  "entities": {
+    "Account": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Account",
+      "type": "object",
+      "description": "Represents a user account's core role and authentication link.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Account entity, matches Auth UID."
+        },
+        "email": {
+          "type": "string",
+          "description": "The email address of the user.",
+          "format": "email"
+        },
+        "userType": {
+          "type": "string",
+          "description": "The type of user (e.g., 'student', 'mentor')."
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "userType"
+      ]
+    },
+    "UserProfile": {
+      "title": "User Profile",
+      "type": "object",
+      "description": "Stores detailed profile information for a user.",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The user's email address."
+        },
+        "firstName": {
+          "type": "string",
+          "description": "The first name of the user."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "The last name of the user."
+        },
+        "phone": {
+          "type": "string",
+          "description": "The user's phone number."
+        },
+        "address": {
+          "type": "string",
+          "description": "The user's address."
+        }
+      },
+      "required": [
+        "firstName",
+        "lastName",
+        "email"
+      ]
+    },
+    "Mentor": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Mentor",
+      "type": "object",
+      "description": "Represents a mentor on the MentorLink platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Mentor entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to Account. (Relationship: Account 1:1 Mentor)"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the mentor."
+        },
+        "qualifications": {
+          "type": "string",
+          "description": "Description of the mentor's qualifications."
+        },
+        "teachingSubjects": {
+          "type": "array",
+          "description": "List of subjects the mentor can teach.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hourlyRate": {
+          "type": "number",
+          "description": "The mentor's hourly rate."
+        },
+        "availability": {
+          "type": "string",
+          "description": "Description of the mentor's availability."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "name"
+      ]
+    },
+    "Student": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Student",
+      "type": "object",
+      "description": "Represents a student on the MentorLink platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Student entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to Account. (Relationship: Account 1:1 Student)"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the student."
+        },
+        "grade": {
+          "type": "string",
+          "description": "The grade level of the student."
+        }
+      },
+      "required": [
+        "id",
+        "userId"
+      ]
+    },
+    "Session": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Session",
+      "type": "object",
+      "description": "Represents a mentoring session.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Session entity."
+        },
+        "participantIds": {
+          "type": "array",
+          "description": "List of participant user IDs (student and mentor).",
+          "items": {
+            "type": "string"
+          }
+        },
+        "startTime": {
+          "type": "string",
+          "description": "The start time of the session.",
+          "format": "date-time"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "The end time of the session.",
+          "format": "date-time"
+        },
+        "location": {
+          "type": "string",
+          "description": "The location of the session (e.g., 'home visit', 'community hub')."
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the session (e.g., 'scheduled', 'completed', 'cancelled')."
+        },
+        "subject": {
+          "type": "string",
+          "description": "The subject of the mentoring session."
+        }
+      },
+      "required": [
+        "id",
+        "participantIds",
+        "startTime",
+        "endTime",
+        "location",
+        "status"
+      ]
+    },
+    "Subscription": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Subscription",
+      "type": "object",
+      "description": "Represents a subscription plan for students.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Subscription entity."
+        },
+        "studentId": {
+          "type": "string",
+          "description": "Reference to Student. (Relationship: Student 1:N Subscription)"
+        },
+        "planName": {
+          "type": "string",
+          "description": "The name of the subscription plan (e.g., 'Basic', 'Standard', 'Premium')."
+        },
+        "price": {
+          "type": "number",
+          "description": "The price of the subscription plan."
+        },
+        "startDate": {
+          "type": "string",
+          "description": "The start date of the subscription.",
+          "format": "date-time"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "The end date of the subscription.",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the subscription (e.g., 'active', 'inactive')."
+        }
+      },
+      "required": [
+        "id",
+        "studentId",
+        "planName",
+        "price",
+        "startDate",
+        "endDate",
+        "status"
+      ]
+    },
+    "Feedback": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Feedback",
+      "type": "object",
+      "description": "Represents feedback given by a user for a session.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Feedback entity."
+        },
+        "sessionId": {
+          "type": "string",
+          "description": "Reference to Session. (Relationship: Session 1:N Feedback)"
+        },
+        "creatorId": {
+          "type": "string",
+          "description": "The user ID of the person who created the feedback."
+        },
+        "recipientId": {
+          "type": "string",
+          "description": "The user ID of the person to whom the feedback is directed (e.g., the mentor)."
+        },
+        "rating": {
+          "type": "number",
+          "description": "The rating given by the user (e.g., 1-5)."
+        },
+        "comment": {
+          "type": "string",
+          "description": "The comment given by the user."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the feedback was submitted."
+        }
+      },
+      "required": [
+        "id",
+        "sessionId",
+        "creatorId",
+        "recipientId",
+        "rating",
+        "comment"
+      ]
+    },
+    "MentorRequest": {
+      "title": "Mentor Request",
+      "type": "object",
+      "description": "A request for a mentor submitted by a user.",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "grade": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "phone",
+        "location",
+        "createdAt"
+      ]
+    },
+    "MentorApplication": {
+      "title": "Mentor Application",
+      "type": "object",
+      "description": "An application submitted by someone who wants to become a mentor.",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The ID of the user who submitted the application, if they were logged in."
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "qualifications": {
+          "type": "string"
+        },
+        "subjects": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "firstName",
+        "lastName",
+        "email",
+        "phone",
+        "address",
+        "qualifications",
+        "subjects",
+        "bio",
+        "createdAt"
+      ]
+    },
+    "Admin": {
+      "title": "Admin",
+      "type": "object",
+      "description": "Represents an administrator user.",
+      "properties": {
+        "isAdmin": {
+          "type": "boolean",
+          "description": "Flag indicating admin privileges."
+        }
+      },
+      "required": ["isAdmin"]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous",
+      "google.com"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/account/{userId}",
+        "definition": {
+          "entityName": "Account",
+          "schema": {
+            "$ref": "#/backend/entities/Account"
+          },
+          "description": "Stores user account core data like role. Path-based ownership: only the user can access their profile.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/profiles/{userId}",
+        "definition": {
+          "entityName": "UserProfile",
+          "schema": {
+            "$ref": "#/backend/entities/UserProfile"
+          },
+          "description": "Stores user profile data like name and address. Path-based ownership: only the user can access their profile."
+        }
+      },
+      {
+        "path": "/mentors/{mentorId}",
+        "definition": {
+          "entityName": "Mentor",
+          "schema": {
+            "$ref": "#/backend/entities/Mentor"
+          },
+          "description": "Stores mentor profiles. Includes denormalized 'userId' for direct association with the user account.",
+          "params": [
+            {
+              "name": "mentorId",
+              "description": "The unique identifier for the mentor."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/students/{studentId}",
+        "definition": {
+          "entityName": "Student",
+          "schema": {
+            "$ref": "#/backend/entities/Student"
+          },
+          "description": "Stores student profiles. Includes denormalized 'userId' for direct association with the user account.",
+          "params": [
+            {
+              "name": "studentId",
+              "description": "The unique identifier for the student."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/sessions/{sessionId}",
+        "definition": {
+          "entityName": "Session",
+          "schema": {
+            "$ref": "#/backend/entities/Session"
+          },
+          "description": "Stores mentoring sessions. Includes 'participantIds' to associate with student and mentor.",
+          "params": [
+            {
+              "name": "sessionId",
+              "description": "The unique identifier for the session."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/subscriptions/{subscriptionId}",
+        "definition": {
+          "entityName": "Subscription",
+          "schema": {
+            "$ref": "#/backend/entities/Subscription"
+          },
+          "description": "Stores subscription plans for students. Includes 'studentId' to associate with the student profile.",
+          "params": [
+            {
+              "name": "subscriptionId",
+              "description": "The unique identifier for the subscription."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/feedbacks/{feedbackId}",
+        "definition": {
+          "entityName": "Feedback",
+          "schema": {
+            "$ref": "#/backend/entities/Feedback"
+          },
+          "description": "Stores feedback given by users for sessions. Includes 'sessionId' to associate with the session.",
+          "params": [
+            {
+              "name": "feedbackId",
+              "description": "The unique identifier for the feedback."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/mentorRequests/{requestId}",
+        "definition": {
+          "entityName": "MentorRequest",
+          "schema": { "$ref": "#/backend/entities/MentorRequest" },
+          "description": "Stores mentor requests from users."
+        }
+      },
+      {
+        "path": "/mentorApplications/{applicationId}",
+        "definition": {
+          "entityName": "MentorApplication",
+          "schema": { "$ref": "#/backend/entities/MentorApplication" },
+          "description": "Stores applications from prospective mentors."
+        }
+      },
+      {
+        "path": "/admins/{userId}",
+        "definition": {
+          "entityName": "Admin",
+          "schema": { "$ref": "#/backend/entities/Admin"},
+          "description": "Stores a list of user IDs that have admin privileges."
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to ensure security, scalability, and ease of debugging, following the principles of Authorization Independence, Clarity of Intent, DBAC (Database-Based Access Control), and QAPs (Rules are not Filters). Authorization Independence is achieved through denormalization of authorization data. Specifically, for entities like `Session` that are associated with both a `Mentor` and a `Student`, the relevant user IDs could be copied into the session document to avoid dependency on parent documents. For collaborative entities, the membership map pattern (`members: {uid: role}`) is used. Path-based ownership is applied where a user owns specific data, such as their Mentor or Student profile. Segregation is used to differentiate data with different access requirements. For example, user profiles (students and mentors) are stored under `/account/{userId}`, ensuring consistent security rules for profile access.\n\nQAPs are supported via Structural Segregation. List operations are secured by ensuring that collections contain homogeneous data with uniform security requirements. This prevents filtering within rules. Data clarity and predictability are enhanced using explicit state modeling via the `status` field and consistent naming conventions."
+  }
+}
+
+    

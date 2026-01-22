@@ -1,0 +1,88 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "A mentor helping a student with their work in a bright, modern library.",
+      "imageUrl": "https://images.unsplash.com/photo-1565493976845-be5425a1ca48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlZHVjYXRpb24lMjBzdHVkZW50fGVufDB8fHx8MTc2ODQxNzI3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "education student"
+    },
+    {
+      "id": "hero-professional",
+      "description": "A mentor and student happily working together at a table with a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtZW50b3J8ZW58MHx8fHwxNzY4NDE3Mjc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mentor student"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Portrait of a smiling parent.",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjgzMzU2NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Portrait of a happy parent.",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY4MzM1NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Portrait of a content parent.",
+      "imageUrl": "https://images.unsplash.com/photo-1521119989659-a83eee488004?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjgzMzU2NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "mentor-1",
+      "description": "Professional headshot of a friendly female mentor.",
+      "imageUrl": "https://images.unsplash.com/photo-1631490238101-a1156ce9bb3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWFjaGVyJTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc2ODQxNzI3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher professional"
+    },
+    {
+      "id": "mentor-2",
+      "description": "Professional headshot of a smiling male mentor.",
+      "imageUrl": "https://images.unsplash.com/photo-1700616466971-a4e05aa89e7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc2ODQxNzI3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher professional"
+    },
+    {
+      "id": "mentor-3",
+      "description": "Professional headshot of a female science teacher.",
+      "imageUrl": "https://images.unsplash.com/photo-1758685734153-132c8620c1bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWFjaGVyJTIwc2NpZW5jZXxlbnwwfHx8fDE3Njg0MTcyNzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher science"
+    },
+    {
+      "id": "mentor-4",
+      "description": "Professional headshot of a male math tutor.",
+      "imageUrl": "https://images.unsplash.com/photo-1758685848238-001e0cc182ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWFjaGVyJTIwbWF0aHxlbnwwfHx8fDE3Njg0MTcyNzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher math"
+    },
+    {
+      "id": "mentor-5",
+      "description": "Professional headshot of a female language arts mentor.",
+      "imageUrl": "https://images.unsplash.com/photo-1544776193-352d25ca82cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwbGFuZ3VhZ2V8ZW58MHx8fHwxNzY4NDE3MjczfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher language"
+    },
+    {
+      "id": "mentor-6",
+      "description": "Professional headshot of a friendly male mentor.",
+      "imageUrl": "https://images.unsplash.com/photo-1584554376766-ac0f2c65e949?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFjaGVyJTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc2ODQxNzI3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher professional"
+    },
+    {
+      "id": "mentor-7",
+      "description": "Professional headshot of a female arts mentor.",
+      "imageUrl": "https://images.unsplash.com/photo-1750924718882-33ee16ddf3a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwYXJ0fGVufDB8fHx8MTc2ODQxNzI3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher art"
+    },
+    {
+      "id": "mentor-8",
+      "description": "Professional headshot of a male history tutor.",
+      "imageUrl": "https://images.unsplash.com/photo-1636772523547-5577d04e8dc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0ZWFjaGVyJTIwaGlzdG9yeXxlbnwwfHx8fDE3Njg0MTcyNzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher history"
+    },
+    {
+      "id": "auth-background",
+      "description": "A soft, abstract gradient background.",
+      "imageUrl": "https://images.unsplash.com/photo-1557682250-33bd709cbe85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhYnN0cmFjdCUyMGdyYWRpZW50fGVufDB8fHx8MTc2ODQxNzI3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract gradient"
+    }
+  ]
+}
